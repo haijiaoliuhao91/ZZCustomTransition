@@ -24,16 +24,11 @@
     return _moderTransation;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+- (IBAction)transitionClick:(UIButton *)sender {
     MPSecondViewController * secondVC = [[MPSecondViewController alloc]init];
     secondVC.modalPresentationStyle = UIModalPresentationCustom;
     secondVC.transitioningDelegate = self.moderTransation;
-    self.moderTransation.z_modalTransStyle = MPTransitionStyleBoundsGradient ;
+    self.moderTransation.z_modalTransStyle = (MPModalTransitionStyle)sender.tag;
     [self presentViewController:secondVC animated:YES completion:nil];
 }
 

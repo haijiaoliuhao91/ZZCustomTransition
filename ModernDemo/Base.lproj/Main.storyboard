@@ -1,31 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Ab-r3-8pH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Ab-r3-8pH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--自定义转场-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lb5-NX-emT">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P15-Ew-qYY">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="60"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="左右"/>
+                                        <connections>
+                                            <action selector="transitionClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lrm-OO-uHA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUA-gP-MuJ">
+                                        <rect key="frame" x="0.0" y="70" width="200" height="60"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="上下"/>
+                                        <connections>
+                                            <action selector="transitionClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dIp-Rv-nWi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnW-8l-9Gp">
+                                        <rect key="frame" x="0.0" y="140" width="200" height="60"/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="形变"/>
+                                        <connections>
+                                            <action selector="transitionClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qzJ-k5-PIC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="HnW-8l-9Gp" firstAttribute="width" secondItem="P15-Ew-qYY" secondAttribute="width" id="1BH-V2-kuw"/>
+                                    <constraint firstItem="vUA-gP-MuJ" firstAttribute="height" secondItem="P15-Ew-qYY" secondAttribute="height" id="7hy-0l-Wwb"/>
+                                    <constraint firstItem="vUA-gP-MuJ" firstAttribute="width" secondItem="P15-Ew-qYY" secondAttribute="width" id="BEY-gd-fkT"/>
+                                    <constraint firstItem="HnW-8l-9Gp" firstAttribute="height" secondItem="P15-Ew-qYY" secondAttribute="height" id="K4R-b9-nhz"/>
+                                    <constraint firstAttribute="height" constant="200" id="iHc-Td-0cS"/>
+                                    <constraint firstAttribute="width" constant="200" id="j0g-U8-pvD"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Lb5-NX-emT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JFF-Z1-RR7"/>
+                            <constraint firstItem="Lb5-NX-emT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mKN-RL-NNg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LyA-Wt-nAb">
-                        <barButtonItem key="rightBarButtonItem" title="push" id="Arh-kh-t2s"/>
+                    <navigationItem key="navigationItem" title="自定义转场" id="LyA-Wt-nAb">
+                        <barButtonItem key="rightBarButtonItem" id="Arh-kh-t2s"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="294" y="-340"/>
+            <point key="canvasLocation" x="162" y="-348"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4vA-3W-Sim">
@@ -33,7 +76,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4Ab-r3-8pH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zoV-Vw-CBz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -43,7 +86,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pr6-EG-bVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-487" y="-18"/>
+            <point key="canvasLocation" x="-790" y="-286"/>
         </scene>
     </scenes>
 </document>
